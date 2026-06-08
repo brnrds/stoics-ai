@@ -6,6 +6,15 @@ type EntityStatus = z.infer<typeof entityStatusSchema>;
 
 export type { EntityStatus };
 
+export type AccountContext = {
+  accountId: string;
+  workosOrgId: string;
+  userId: string;
+  workosUserId: string;
+  roleSlug?: string;
+  permissions: string[];
+};
+
 export type AccountSummary = Pick<
   typeof accounts.$inferSelect,
   "id" | "name" | "workosOrgId"
@@ -17,3 +26,18 @@ export type CurrentUserSummary = Pick<
   typeof users.$inferSelect,
   "id" | "email" | "name" | "workosUserId"
 >;
+
+export type AccountReadyState = {
+  status: "ready";
+  account: AccountSummary;
+  user: CurrentUserSummary;
+  context: AccountContext;
+};
+
+export type AccountRequiredState = {
+  status: "account_required";
+  user: CurrentUserSummary;
+  selfServeEnabled: boolean;
+};
+
+export type AccountResolution = AccountReadyState | AccountRequiredState;
