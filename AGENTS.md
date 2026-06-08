@@ -13,3 +13,7 @@ No legacy compatibility. Do not create `scripts/` or add ad hoc repo scripts.
 Docs live in `docs/`. Do not write docs or create folders in `docs/` without user approval. Keep `AGENTS.md` short. Put task-specific agent rules in `.cursor/rules/`.
 
 WorkOS is auth core. Do not add alternate auth.
+
+## AI SDK (v7 canary)
+
+This project targets AI SDK v7 (`ai@canary`). Use the official `ai-sdk` skill (`.agents/skills/ai-sdk`; refresh with `npx skills add vercel/ai -y -a cursor`). Treat `node_modules/ai/docs/` as source of truth — especially `08-migration-guides/23-migration-guide-7-0.mdx`. Skill reference files may lag; prefer bundled docs over skill memory. Key v7 patterns: `instructions` (not `system`), `isStepCount` (not `stepCountIs`), `createUIMessageStreamResponse` + `toUIMessageStream` for chat routes.
