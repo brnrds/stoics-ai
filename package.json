@@ -9,7 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "4.0.0-canary.63",
+    "@ai-sdk/openai": "4.0.0-canary.69",
+    "@ai-sdk/react": "4.0.0-canary.168",
     "@workos-inc/authkit-nextjs": "^4.1.1",
+    "ai": "7.0.0-canary.165",
     "next": "16.2.7",
     "react": "19.2.4",
     "react-dom": "19.2.4"

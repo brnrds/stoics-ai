@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stoics AI
 
-## Getting Started
+Early-stage Next.js app combining [WorkOS AuthKit](https://workos.com/docs/user-management) for authentication with the [Vercel AI SDK](https://ai-sdk.dev) for upcoming AI features.
 
-First, run the development server:
+## What's here so far
+
+### WorkOS AuthKit
+
+User authentication is wired up end to end:
+
+- **Sign in / sign out** — `AuthButton` on the home page triggers AuthKit sign-in or posts to `/auth/signout`
+- **Session handling** — `withAuth()` on the server reads the current user; `useAuth()` on the client drives the auth button
+- **Auth routes** — `/auth/callback` (OAuth callback) and `/auth/signout`
+- **Middleware** — `proxy.ts` runs `authkitProxy()` to manage session cookies on each request
+- **Provider** — `AuthKitProvider` wraps the app in `app/layout.tsx`
+
+Signed-in users see a welcome message and basic profile details (id, email, name, verification status).
+
+### Vercel AI SDK
+
+AI dependencies are installed on the **v7 canary** line, ready for implementation:
+
+| Package | Purpose |
+|---|---|
+| `ai` | Core SDK (`generateText`, `streamText`, agents, tools, etc.) |
+| `@ai-sdk/openai` | OpenAI provider |
+| `@ai-sdk/anthropic` | Anthropic provider |
+| `@ai-sdk/react` | React hooks (`useChat`, etc.) |
+
+No AI routes, agents, or UI are implemented yet — the packages are in place for the next step.
+
+## Tech stack
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+- **pnpm**
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 20+
+- pnpm
+- A [WorkOS](https://workos.com) account with AuthKit configured
+
+### Environment variables
+
+Create a `.env.local` with:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+WORKOS_API_KEY=sk_...
+WORKOS_CLIENT_ID=client_...
+WORKOS_COOKIE_PASSWORD=...   # at least 32 characters
+NEXT_PUBLIC_WORKOS_REDIRECT_URI=http://localhost:3000/auth/callback
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+When you add AI features, you'll also need provider API keys, for example:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run locally
 
-## Learn More
+```bash
+pnpm install
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Other commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm lint
+pnpm exec tsc --noEmit
+```
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+  page.tsx              # Home page (auth-aware welcome)
+  layout.tsx            # Root layout with AuthKitProvider
+  components/
+    auth-button.tsx     # Sign in / sign out button
+  auth/
+    callback/route.ts   # WorkOS OAuth callback
+    signout/route.ts    # Sign-out handler
+proxy.ts                # AuthKit session middleware
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Updating AI SDK canary versions
+
+All AI packages are pinned to canary releases. To pull the latest:
+
+```bash
+pnpm add ai@canary @ai-sdk/openai@canary @ai-sdk/anthropic@canary @ai-sdk/react@canary
+```
+
+## Learn more
+
+- [WorkOS AuthKit for Next.js](https://workos.com/docs/user-management)
+- [AI SDK documentation](https://ai-sdk.dev)
