@@ -56,12 +56,7 @@ WORKOS_COOKIE_PASSWORD=...   # at least 32 characters
 NEXT_PUBLIC_WORKOS_REDIRECT_URI=http://localhost:3000/auth/callback
 ```
 
-When you add AI features, you'll also need provider API keys, for example:
-
-```bash
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
-```
+When you add AI features, tenant provider keys (OpenAI, Anthropic) are stored in **WorkOS Vault** per organization — not in `.env.local`. See `docs/vault.md`. Platform env stays WorkOS + database only.
 
 ### Run locally
 

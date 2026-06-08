@@ -13,25 +13,21 @@ Skip these sections from the official guide:
 | Run dev server | Done (`pnpm dev`) |
 | WorkOS auth shell | Done — home page is auth-aware, not chat |
 
-## 1. Provider API key
+## 1. Provider API keys (Vault)
 
-The official guide uses **Vercel AI Gateway** (`AI_GATEWAY_API_KEY`). This project is set up for **direct providers** instead.
+The official guide uses platform env or **Vercel AI Gateway**. **This project does not.** Tenant-owned keys (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`) are stored in **WorkOS Vault** per organization — see `docs/vault.md`.
 
-Add to `.env.local` (at least one):
+Before wiring chat:
 
-```bash
-OPENAI_API_KEY=sk-...
-# and/or
-ANTHROPIC_API_KEY=sk-ant-...
-```
+1. Implement Vault (copy pattern from `ak-marketing-toolkit`: `lib/vault.ts`, `lib/vault-account.ts`, `vault_secrets` table).
+2. Add a server helper to read the key at call time, e.g. `getAnthropicApiKey(context)` → Vault lookup → `createAnthropic({ apiKey })`.
+3. Do **not** add provider keys to `schemas/env.ts` or `.env.local` for tenant use.
 
-When wiring the route handler, also add the chosen key(s) to `schemas/env.ts` and read them via `getServerEnv()` from `lib/env.ts` — do not read `process.env` ad hoc in route handlers.
-
-Optional later: switch to Gateway with `AI_GATEWAY_API_KEY` and string model IDs like `'anthropic/claude-sonnet-4.6'`.
+Platform env stays WorkOS + database only (`WORKOS_*`, `DATABASE_URL`).
 
 ## 2. Chat API route
 
-Create `app/api/chat/route.ts`:
+Create `app/api/chat/route.ts`. Load the provider key from Vault at call time — see `docs/vault.md`. Helpers like `getAnthropicApiKey` and `resolveCurrentAccountContext` are not implemented yet; copy from `ak-marketing-toolkit` capability access patterns.
 
 ```tsx
 import {
@@ -41,10 +37,15 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-import { anthropic } from '@ai-sdk/anthropic';
-// or: import { openai } from '@ai-sdk/openai';
+import { createAnthropic } from '@ai-sdk/anthropic';
+import { getAnthropicApiKey } from '@/lib/capabilities/ai/access';
+import { resolveCurrentAccountContext } from '@/lib/account-context';
 
 export async function POST(req: Request) {
+  const context = await resolveCurrentAccountContext();
+  const apiKey = await getAnthropicApiKey(context);
+  const anthropic = createAnthropic({ apiKey });
+
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
