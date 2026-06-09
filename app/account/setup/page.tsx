@@ -6,7 +6,7 @@ export default function AccountSetupPage() {
           <h1 className="text-2xl font-semibold tracking-tight">
             Account setup
           </h1>
-          <p className="mt-2 text-sm text-muted">
+          <p className="mt-2 text-sm text-muted-foreground">
             Organization selection and account provisioning are not implemented
             yet.
           </p>

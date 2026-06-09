@@ -1,0 +1,1149 @@
+{
+  "source": "https://www.assistant-ui.com/docs",
+  "indexUrl": "https://www.assistant-ui.com/llms.txt",
+  "fetchedAt": "2026-05-15T12:35:09Z",
+  "pageCount": 228,
+  "pages": [
+    {
+      "mdx": "https://www.assistant-ui.com/docs.mdx",
+      "page": "https://www.assistant-ui.com/docs",
+      "file": "index.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters",
+      "file": "api-reference/adapters.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters/attachments.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters/attachments",
+      "file": "api-reference/adapters/attachments.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters/feedback.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters/feedback",
+      "file": "api-reference/adapters/feedback.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters/model.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters/model",
+      "file": "api-reference/adapters/model.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters/persistence.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters/persistence",
+      "file": "api-reference/adapters/persistence.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters/runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters/runtime",
+      "file": "api-reference/adapters/runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/adapters/suggestions.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/adapters/suggestions",
+      "file": "api-reference/adapters/suggestions.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/context-providers.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/context-providers",
+      "file": "api-reference/context-providers.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/context-providers/assistant-runtime-provider.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/context-providers/assistant-runtime-provider",
+      "file": "api-reference/context-providers/assistant-runtime-provider.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/context-providers/scoped-providers.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/context-providers/scoped-providers",
+      "file": "api-reference/context-providers/scoped-providers.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/external-store.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/external-store",
+      "file": "api-reference/external-store.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/external-store/message-conversion.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/external-store/message-conversion",
+      "file": "api-reference/external-store/message-conversion.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/external-store/runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/external-store/runtime",
+      "file": "api-reference/external-store/runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks",
+      "file": "api-reference/hooks.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks/composer-triggers.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks/composer-triggers",
+      "file": "api-reference/hooks/composer-triggers.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks/model-context.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks/model-context",
+      "file": "api-reference/hooks/model-context.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks/primitives.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks/primitives",
+      "file": "api-reference/hooks/primitives.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks/runtimes.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks/runtimes",
+      "file": "api-reference/hooks/runtimes.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks/state.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks/state",
+      "file": "api-reference/hooks/state.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/hooks/utilities.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/hooks/utilities",
+      "file": "api-reference/hooks/utilities.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/integrations.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/integrations",
+      "file": "api-reference/integrations.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/integrations/cloud-ai-sdk.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/integrations/cloud-ai-sdk",
+      "file": "api-reference/integrations/cloud-ai-sdk.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/integrations/react-ai-sdk.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/integrations/react-ai-sdk",
+      "file": "api-reference/integrations/react-ai-sdk.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/model-context.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/model-context",
+      "file": "api-reference/model-context.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/model-context/context.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/model-context/context",
+      "file": "api-reference/model-context/context.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/model-context/registry.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/model-context/registry",
+      "file": "api-reference/model-context/registry.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/overview",
+      "file": "api-reference/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives",
+      "file": "api-reference/primitives.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/action-bar-more.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/action-bar-more",
+      "file": "api-reference/primitives/action-bar-more.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/action-bar.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/action-bar",
+      "file": "api-reference/primitives/action-bar.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/assistant-if.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/assistant-if",
+      "file": "api-reference/primitives/assistant-if.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/assistant-modal.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/assistant-modal",
+      "file": "api-reference/primitives/assistant-modal.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/attachment.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/attachment",
+      "file": "api-reference/primitives/attachment.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/branch-picker.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/branch-picker",
+      "file": "api-reference/primitives/branch-picker.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/chain-of-thought.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/chain-of-thought",
+      "file": "api-reference/primitives/chain-of-thought.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/composer.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/composer",
+      "file": "api-reference/primitives/composer.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/composition.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/composition",
+      "file": "api-reference/primitives/composition.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/error.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/error",
+      "file": "api-reference/primitives/error.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/message-part.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/message-part",
+      "file": "api-reference/primitives/message-part.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/message.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/message",
+      "file": "api-reference/primitives/message.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/queue-item.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/queue-item",
+      "file": "api-reference/primitives/queue-item.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/selection-toolbar.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/selection-toolbar",
+      "file": "api-reference/primitives/selection-toolbar.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/suggestion.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/suggestion",
+      "file": "api-reference/primitives/suggestion.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/thread-list-item-more.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/thread-list-item-more",
+      "file": "api-reference/primitives/thread-list-item-more.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/thread-list-item.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/thread-list-item",
+      "file": "api-reference/primitives/thread-list-item.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/thread-list.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/thread-list",
+      "file": "api-reference/primitives/thread-list.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/primitives/thread.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/primitives/thread",
+      "file": "api-reference/primitives/thread.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes",
+      "file": "api-reference/runtimes.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/assistant-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/assistant-runtime",
+      "file": "api-reference/runtimes/assistant-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/attachment-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/attachment-runtime",
+      "file": "api-reference/runtimes/attachment-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/composer-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/composer-runtime",
+      "file": "api-reference/runtimes/composer-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/message-part-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/message-part-runtime",
+      "file": "api-reference/runtimes/message-part-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/message-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/message-runtime",
+      "file": "api-reference/runtimes/message-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/queue-state.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/queue-state",
+      "file": "api-reference/runtimes/queue-state.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/thread-list-item-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/thread-list-item-runtime",
+      "file": "api-reference/runtimes/thread-list-item-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/thread-list-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/thread-list-runtime",
+      "file": "api-reference/runtimes/thread-list-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/runtimes/thread-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/runtimes/thread-runtime",
+      "file": "api-reference/runtimes/thread-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/tools.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/tools",
+      "file": "api-reference/tools.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/tools/definition.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/tools/definition",
+      "file": "api-reference/tools/definition.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/tools/rendering.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/tools/rendering",
+      "file": "api-reference/tools/rendering.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/tools/status.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/tools/status",
+      "file": "api-reference/tools/status.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/transport.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/transport",
+      "file": "api-reference/transport.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/transport/assistant-transport.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/transport/assistant-transport",
+      "file": "api-reference/transport/assistant-transport.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/transport/frame.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/transport/frame",
+      "file": "api-reference/transport/frame.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/utilities.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/utilities",
+      "file": "api-reference/utilities.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/utilities/miscellaneous.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/utilities/miscellaneous",
+      "file": "api-reference/utilities/miscellaneous.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/voice.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/voice",
+      "file": "api-reference/voice.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/voice/session.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/voice/session",
+      "file": "api-reference/voice/session.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/api-reference/voice/speech-dictation.mdx",
+      "page": "https://www.assistant-ui.com/docs/api-reference/voice/speech-dictation",
+      "file": "api-reference/voice/speech-dictation.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/architecture.mdx",
+      "page": "https://www.assistant-ui.com/docs/architecture",
+      "file": "architecture.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/cli.mdx",
+      "page": "https://www.assistant-ui.com/docs/cli",
+      "file": "cli.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/cloud.mdx",
+      "page": "https://www.assistant-ui.com/docs/cloud",
+      "file": "cloud.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/cloud/ai-sdk-assistant-ui.mdx",
+      "page": "https://www.assistant-ui.com/docs/cloud/ai-sdk-assistant-ui",
+      "file": "cloud/ai-sdk-assistant-ui.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/cloud/ai-sdk.mdx",
+      "page": "https://www.assistant-ui.com/docs/cloud/ai-sdk",
+      "file": "cloud/ai-sdk.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/cloud/authorization.mdx",
+      "page": "https://www.assistant-ui.com/docs/cloud/authorization",
+      "file": "cloud/authorization.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/cloud/langgraph.mdx",
+      "page": "https://www.assistant-ui.com/docs/cloud/langgraph",
+      "file": "cloud/langgraph.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/assistant-frame.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/assistant-frame",
+      "file": "copilots/assistant-frame.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/make-assistant-tool-ui.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/make-assistant-tool-ui",
+      "file": "copilots/make-assistant-tool-ui.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/make-assistant-tool.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/make-assistant-tool",
+      "file": "copilots/make-assistant-tool.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/make-assistant-visible.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/make-assistant-visible",
+      "file": "copilots/make-assistant-visible.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/model-context.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/model-context",
+      "file": "copilots/model-context.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/motivation.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/motivation",
+      "file": "copilots/motivation.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/copilots/use-assistant-instructions.mdx",
+      "page": "https://www.assistant-ui.com/docs/copilots/use-assistant-instructions",
+      "file": "copilots/use-assistant-instructions.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/devtools.mdx",
+      "page": "https://www.assistant-ui.com/docs/devtools",
+      "file": "devtools.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides",
+      "file": "guides.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/attachments.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/attachments",
+      "file": "guides/attachments.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/branching.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/branching",
+      "file": "guides/branching.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/chain-of-thought.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/chain-of-thought",
+      "file": "guides/chain-of-thought.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/context-api.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/context-api",
+      "file": "guides/context-api.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/dictation.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/dictation",
+      "file": "guides/dictation.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/editing.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/editing",
+      "file": "guides/editing.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/interactables.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/interactables",
+      "file": "guides/interactables.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/latex.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/latex",
+      "file": "guides/latex.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/mcp-apps.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/mcp-apps",
+      "file": "guides/mcp-apps.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/mentions.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/mentions",
+      "file": "guides/mentions.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/message-timing.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/message-timing",
+      "file": "guides/message-timing.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/multi-agent.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/multi-agent",
+      "file": "guides/multi-agent.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/quoting.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/quoting",
+      "file": "guides/quoting.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/resumable-stream-deployment.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/resumable-stream-deployment",
+      "file": "guides/resumable-stream-deployment.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/resumable-stream-stores.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/resumable-stream-stores",
+      "file": "guides/resumable-stream-stores.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/resumable-streams.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/resumable-streams",
+      "file": "guides/resumable-streams.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/slash-commands.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/slash-commands",
+      "file": "guides/slash-commands.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/speech.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/speech",
+      "file": "guides/speech.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/suggestions.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/suggestions",
+      "file": "guides/suggestions.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/tool-ui.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/tool-ui",
+      "file": "guides/tool-ui.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/tools.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/tools",
+      "file": "guides/tools.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/guides/voice.mdx",
+      "page": "https://www.assistant-ui.com/docs/guides/voice",
+      "file": "guides/voice.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ink.mdx",
+      "page": "https://www.assistant-ui.com/docs/ink",
+      "file": "ink.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ink/adapters.mdx",
+      "page": "https://www.assistant-ui.com/docs/ink/adapters",
+      "file": "ink/adapters.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ink/custom-backend.mdx",
+      "page": "https://www.assistant-ui.com/docs/ink/custom-backend",
+      "file": "ink/custom-backend.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ink/hooks.mdx",
+      "page": "https://www.assistant-ui.com/docs/ink/hooks",
+      "file": "ink/hooks.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ink/migration.mdx",
+      "page": "https://www.assistant-ui.com/docs/ink/migration",
+      "file": "ink/migration.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ink/primitives.mdx",
+      "page": "https://www.assistant-ui.com/docs/ink/primitives",
+      "file": "ink/primitives.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/installation.mdx",
+      "page": "https://www.assistant-ui.com/docs/installation",
+      "file": "installation.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations",
+      "file": "integrations.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter",
+      "file": "integrations/attachments/custom-adapter.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/auth/better-auth.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/auth/better-auth",
+      "file": "integrations/auth/better-auth.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/auth/clerk.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/auth/clerk",
+      "file": "integrations/auth/clerk.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/auth/next-auth.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/auth/next-auth",
+      "file": "integrations/auth/next-auth.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/frameworks/ai-sdk.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/frameworks/ai-sdk",
+      "file": "integrations/frameworks/ai-sdk.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/frameworks/cloudflare-agents/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/frameworks/cloudflare-agents/overview",
+      "file": "integrations/frameworks/cloudflare-agents/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/frameworks/mastra/full-stack.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/frameworks/mastra/full-stack",
+      "file": "integrations/frameworks/mastra/full-stack.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/frameworks/mastra/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/frameworks/mastra/overview",
+      "file": "integrations/frameworks/mastra/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/frameworks/mastra/separate-server.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/frameworks/mastra/separate-server",
+      "file": "integrations/frameworks/mastra/separate-server.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/gateways.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/gateways",
+      "file": "integrations/gateways.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/observability/helicone.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/observability/helicone",
+      "file": "integrations/observability/helicone.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/observability/langfuse.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/observability/langfuse",
+      "file": "integrations/observability/langfuse.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/observability/langsmith.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/observability/langsmith",
+      "file": "integrations/observability/langsmith.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/persistence/custom-adapter.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/persistence/custom-adapter",
+      "file": "integrations/persistence/custom-adapter.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/integrations/tools/mcp.mdx",
+      "page": "https://www.assistant-ui.com/docs/integrations/tools/mcp",
+      "file": "integrations/tools/mcp.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/llm.mdx",
+      "page": "https://www.assistant-ui.com/docs/llm",
+      "file": "llm.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/migrations/deprecation-policy.mdx",
+      "page": "https://www.assistant-ui.com/docs/migrations/deprecation-policy",
+      "file": "migrations/deprecation-policy.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/migrations/react-compatibility.mdx",
+      "page": "https://www.assistant-ui.com/docs/migrations/react-compatibility",
+      "file": "migrations/react-compatibility.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/migrations/react-langgraph-v0-7.mdx",
+      "page": "https://www.assistant-ui.com/docs/migrations/react-langgraph-v0-7",
+      "file": "migrations/react-langgraph-v0-7.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/migrations/v0-11.mdx",
+      "page": "https://www.assistant-ui.com/docs/migrations/v0-11",
+      "file": "migrations/v0-11.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/migrations/v0-12.mdx",
+      "page": "https://www.assistant-ui.com/docs/migrations/v0-12",
+      "file": "migrations/v0-12.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/migrations/v0-14.mdx",
+      "page": "https://www.assistant-ui.com/docs/migrations/v0-14",
+      "file": "migrations/v0-14.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives",
+      "file": "primitives.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/action-bar.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/action-bar",
+      "file": "primitives/action-bar.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/assistant-modal.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/assistant-modal",
+      "file": "primitives/assistant-modal.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/attachment.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/attachment",
+      "file": "primitives/attachment.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/branch-picker.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/branch-picker",
+      "file": "primitives/branch-picker.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/chain-of-thought.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/chain-of-thought",
+      "file": "primitives/chain-of-thought.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/composer.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/composer",
+      "file": "primitives/composer.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/error.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/error",
+      "file": "primitives/error.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/message.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/message",
+      "file": "primitives/message.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/selection-toolbar.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/selection-toolbar",
+      "file": "primitives/selection-toolbar.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/suggestion.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/suggestion",
+      "file": "primitives/suggestion.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/thread-list.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/thread-list",
+      "file": "primitives/thread-list.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/primitives/thread.mdx",
+      "page": "https://www.assistant-ui.com/docs/primitives/thread",
+      "file": "primitives/thread.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/react-native.mdx",
+      "page": "https://www.assistant-ui.com/docs/react-native",
+      "file": "react-native.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/react-native/adapters.mdx",
+      "page": "https://www.assistant-ui.com/docs/react-native/adapters",
+      "file": "react-native/adapters.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/react-native/custom-backend.mdx",
+      "page": "https://www.assistant-ui.com/docs/react-native/custom-backend",
+      "file": "react-native/custom-backend.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/react-native/hooks.mdx",
+      "page": "https://www.assistant-ui.com/docs/react-native/hooks",
+      "file": "react-native/hooks.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/react-native/migration.mdx",
+      "page": "https://www.assistant-ui.com/docs/react-native/migration",
+      "file": "react-native/migration.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/react-native/primitives.mdx",
+      "page": "https://www.assistant-ui.com/docs/react-native/primitives",
+      "file": "react-native/primitives.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/rtl.mdx",
+      "page": "https://www.assistant-ui.com/docs/rtl",
+      "file": "rtl.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/a2a/client-and-hooks.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/a2a/client-and-hooks",
+      "file": "runtimes/a2a/client-and-hooks.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/a2a/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/a2a/overview",
+      "file": "runtimes/a2a/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/a2a/quickstart.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/a2a/quickstart",
+      "file": "runtimes/a2a/quickstart.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ag-ui/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ag-ui/overview",
+      "file": "runtimes/ag-ui/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ag-ui/quickstart.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ag-ui/quickstart",
+      "file": "runtimes/ag-ui/quickstart.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ag-ui/runtime-options.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ag-ui/runtime-options",
+      "file": "runtimes/ag-ui/runtime-options.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/overview",
+      "file": "runtimes/ai-sdk/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/v4-legacy.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/v4-legacy",
+      "file": "runtimes/ai-sdk/v4-legacy.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/v5-legacy.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/v5-legacy",
+      "file": "runtimes/ai-sdk/v5-legacy.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/v6.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/ai-sdk/v6",
+      "file": "runtimes/ai-sdk/v6.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/concepts/adapters.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/concepts/adapters",
+      "file": "runtimes/concepts/adapters.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/concepts/architecture.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/concepts/architecture",
+      "file": "runtimes/concepts/architecture.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/concepts/stability.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/concepts/stability",
+      "file": "runtimes/concepts/stability.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/concepts/threads.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/concepts/threads",
+      "file": "runtimes/concepts/threads.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/custom/assistant-transport.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/custom/assistant-transport",
+      "file": "runtimes/custom/assistant-transport.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/custom/data-stream.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/custom/data-stream",
+      "file": "runtimes/custom/data-stream.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/custom/external-store.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/custom/external-store",
+      "file": "runtimes/custom/external-store.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/custom/local-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/custom/local-runtime",
+      "file": "runtimes/custom/local-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/custom/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/custom/overview",
+      "file": "runtimes/custom/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/google-adk/api.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/google-adk/api",
+      "file": "runtimes/google-adk/api.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/google-adk/hooks.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/google-adk/hooks",
+      "file": "runtimes/google-adk/hooks.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/google-adk/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/google-adk/overview",
+      "file": "runtimes/google-adk/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/google-adk/quickstart.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/google-adk/quickstart",
+      "file": "runtimes/google-adk/quickstart.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langchain.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langchain",
+      "file": "runtimes/langchain.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/generative-ui.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/generative-ui",
+      "file": "runtimes/langgraph/generative-ui.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/interrupts.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/interrupts",
+      "file": "runtimes/langgraph/interrupts.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/overview",
+      "file": "runtimes/langgraph/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/quickstart.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/quickstart",
+      "file": "runtimes/langgraph/quickstart.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/streaming.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/streaming",
+      "file": "runtimes/langgraph/streaming.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/threads.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/threads",
+      "file": "runtimes/langgraph/threads.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/introduction.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/introduction",
+      "file": "runtimes/langgraph/tutorial/introduction.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/part-1.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/part-1",
+      "file": "runtimes/langgraph/tutorial/part-1.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/part-2.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/part-2",
+      "file": "runtimes/langgraph/tutorial/part-2.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/part-3.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/langgraph/tutorial/part-3",
+      "file": "runtimes/langgraph/tutorial/part-3.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/opencode/hooks.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/opencode/hooks",
+      "file": "runtimes/opencode/hooks.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/opencode/overview.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/opencode/overview",
+      "file": "runtimes/opencode/overview.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/opencode/quickstart.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/opencode/quickstart",
+      "file": "runtimes/opencode/quickstart.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/runtimes/pick-a-runtime.mdx",
+      "page": "https://www.assistant-ui.com/docs/runtimes/pick-a-runtime",
+      "file": "runtimes/pick-a-runtime.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/accordion.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/accordion",
+      "file": "ui/accordion.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/assistant-modal.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/assistant-modal",
+      "file": "ui/assistant-modal.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/assistant-sidebar.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/assistant-sidebar",
+      "file": "ui/assistant-sidebar.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/attachment.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/attachment",
+      "file": "ui/attachment.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/badge.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/badge",
+      "file": "ui/badge.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/composer-trigger-popover.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/composer-trigger-popover",
+      "file": "ui/composer-trigger-popover.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/context-display.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/context-display",
+      "file": "ui/context-display.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/diff-viewer.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/diff-viewer",
+      "file": "ui/diff-viewer.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/directive-text.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/directive-text",
+      "file": "ui/directive-text.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/file.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/file",
+      "file": "ui/file.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/image.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/image",
+      "file": "ui/image.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/markdown.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/markdown",
+      "file": "ui/markdown.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/mermaid.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/mermaid",
+      "file": "ui/mermaid.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/message-timing.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/message-timing",
+      "file": "ui/message-timing.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/model-selector.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/model-selector",
+      "file": "ui/model-selector.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/part-grouping.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/part-grouping",
+      "file": "ui/part-grouping.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/quote.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/quote",
+      "file": "ui/quote.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/reasoning.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/reasoning",
+      "file": "ui/reasoning.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/scrollbar.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/scrollbar",
+      "file": "ui/scrollbar.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/select.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/select",
+      "file": "ui/select.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/sources.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/sources",
+      "file": "ui/sources.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/streamdown.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/streamdown",
+      "file": "ui/streamdown.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/syntax-highlighting.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/syntax-highlighting",
+      "file": "ui/syntax-highlighting.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/tabs.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/tabs",
+      "file": "ui/tabs.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/thread-list.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/thread-list",
+      "file": "ui/thread-list.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/thread.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/thread",
+      "file": "ui/thread.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/tool-fallback.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/tool-fallback",
+      "file": "ui/tool-fallback.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/tool-group.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/tool-group",
+      "file": "ui/tool-group.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/ui/voice.mdx",
+      "page": "https://www.assistant-ui.com/docs/ui/voice",
+      "file": "ui/voice.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/utilities/heat-graph.mdx",
+      "page": "https://www.assistant-ui.com/docs/utilities/heat-graph",
+      "file": "utilities/heat-graph.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/utilities/react-o11y.mdx",
+      "page": "https://www.assistant-ui.com/docs/utilities/react-o11y",
+      "file": "utilities/react-o11y.md"
+    },
+    {
+      "mdx": "https://www.assistant-ui.com/docs/utilities/tw-shimmer.mdx",
+      "page": "https://www.assistant-ui.com/docs/utilities/tw-shimmer",
+      "file": "utilities/tw-shimmer.md"
+    }
+  ],
+  "note": "Per-page markdown via GET with Accept: text/markdown; URL list from llms.txt."
+}

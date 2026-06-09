@@ -8,6 +8,13 @@
       "when": 1780916376192,
       "tag": "0000_initial_workos_projection",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1780925251049,
+      "tag": "0001_aromatic_hex",
+      "breakpoints": true
     }
   ]
 }

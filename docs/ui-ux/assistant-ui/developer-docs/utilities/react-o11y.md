@@ -1,0 +1,182 @@
+# react-o11y
+URL: /docs/utilities/react-o11y
+
+Headless primitives for visualizing observability spans (traces, waterfalls).
+
+`@assistant-ui/react-o11y` is currently v0.0.11 and experimental. The API may change without notice.
+
+`@assistant-ui/react-o11y` provides headless, Radix-style primitives for rendering observability spans as collapsible, indented hierarchical UIs. Use it to build trace inspectors, waterfall debug panels, or LLM call timelines on top of your own span data source.
+
+- **Headless** — Zero styling opinions, bring your own CSS / Tailwind.
+- **Composable** — Radix-style primitive parts you fully control.
+- **Tree-aware** — Automatic depth, parent / child collapse, time range computation.
+- **Tap-powered** — Built on the same `@assistant-ui/tap` reactive primitives as the runtimes.
+
+## [Installation](#installation)
+
+- packages
+
+  - @assistant-ui/react-o11y
+
+## [Quick start](#quick-start)
+
+Mount `SpanResource` with your span data, then render primitives that read from the resource's state:
+
+- title
+
+  components/trace-view\.tsx
+
+`"use client"; import { SpanPrimitive, SpanResource, type SpanData, } from "@assistant-ui/react-o11y"; import { useAui, AuiProvider } from "@assistant-ui/store"; function SpanRow() { return ( <SpanPrimitive.Root className="flex items-center gap-2 py-1"> <SpanPrimitive.Indent /> <SpanPrimitive.CollapseToggle className="size-4 cursor-pointer"> ▸ </SpanPrimitive.CollapseToggle> <SpanPrimitive.StatusIndicator className="size-2 rounded-full data-[span-status=running]:bg-yellow-500 data-[span-status=completed]:bg-green-500 data-[span-status=failed]:bg-red-500" /> <SpanPrimitive.TypeBadge className="rounded bg-muted px-1.5 text-xs" /> <SpanPrimitive.Name className="text-sm" /> <SpanPrimitive.Children components={{ Span: SpanRow }} /> </SpanPrimitive.Root> ); } export function TraceView({ spans }: { spans: SpanData[] }) { const aui = useAui({ resource: SpanResource({ spans }) }); return ( <AuiProvider value={aui}> <SpanPrimitive.Children components={{ Span: SpanRow }} /> </AuiProvider> ); }`
+
+`SpanData` is the input shape your code produces (see
+
+- href
+
+  \#spandata
+
+SpanData
+
+). `SpanResource` enriches it with depth, child counts, time range, and collapse state.
+
+## [Anatomy](#anatomy)
+
+`import { SpanPrimitive, SpanResource, SpanByIndexProvider, } from "@assistant-ui/react-o11y"; // Top-level: mount SpanResource via useAui const aui = useAui({ resource: SpanResource({ spans }) }); <AuiProvider value={aui}> {/* Render visible spans (flat-list output respecting collapsed state) */} <SpanPrimitive.Children components={{ Span: SpanRow }} /> </AuiProvider>; // Each <SpanRow /> sits inside its own SpanByIndexProvider context and reads via primitives function SpanRow() { return ( <SpanPrimitive.Root> <SpanPrimitive.Indent /> <SpanPrimitive.CollapseToggle /> <SpanPrimitive.StatusIndicator /> <SpanPrimitive.TypeBadge /> <SpanPrimitive.Name /> </SpanPrimitive.Root> ); }`
+
+`SpanPrimitive.Children` produces a flat list of visible spans (collapsed subtrees are excluded). Each rendered child is wrapped in a `SpanByIndexProvider` so its primitives resolve to that specific span's state.
+
+## [API reference](#api-reference)
+
+### [SpanResource](#spanresource)
+
+Tap resource that ingests raw span data and exposes a tree-aware reactive state to primitives.
+
+`SpanResource({ spans }: { spans: SpanData[] }): ClientOutput<"span">;`
+
+Mount through `useAui({ resource: SpanResource({ spans }) })`.
+
+The resource computes:
+
+- **depth** of each span based on parent chain.
+- **hasChildren** flag.
+- **timeRange** (`min` / `max` across all spans).
+- **collapse state** managed internally; toggles through primitives.
+
+### [SpanData](#spandata)
+
+Input shape you provide to `SpanResource`:
+
+| Field          | Type                                                | Description                                                      |
+| -------------- | --------------------------------------------------- | ---------------------------------------------------------------- |
+| `id`           | `string`                                            | Unique span identifier.                                          |
+| `parentSpanId` | `string \| null`                                    | Parent span id, or `null` for root spans.                        |
+| `name`         | `string`                                            | Display name.                                                    |
+| `type`         | `string`                                            | Span category (e.g. `llm`, `tool`, `http`). Used by `TypeBadge`. |
+| `status`       | `"running" \| "completed" \| "failed" \| "skipped"` | Lifecycle state. Used by `StatusIndicator`.                      |
+| `startedAt`    | `number`                                            | Start timestamp (ms).                                            |
+| `endedAt`      | `number \| null`                                    | End timestamp (ms), or `null` if still running.                  |
+| `latencyMs`    | `number \| null`                                    | Pre-computed latency, or `null` if running.                      |
+
+### [SpanState](#spanstate)
+
+Returned by `useAuiState((s) => s.span)` inside any span-scoped subtree:
+
+`type SpanState = { id: string; parentSpanId: string | null; name: string; type: string; status: "running" | "completed" | "failed" | "skipped"; startedAt: number; endedAt: number | null; latencyMs: number | null; depth: number; hasChildren: boolean; isCollapsed: boolean; children: SpanItemState[]; timeRange: { min: number; max: number }; };`
+
+### [SpanPrimitive.Root](#spanprimitiveroot)
+
+Container `<div>` exposing span state via data attributes for styling:
+
+| Attribute          | Source             |
+| ------------------ | ------------------ |
+| `data-span-id`     | `span.id`          |
+| `data-span-status` | `span.status`      |
+| `data-span-type`   | `span.type`        |
+| `data-span-depth`  | `span.depth`       |
+| `data-collapsed`   | `span.isCollapsed` |
+
+Accepts all standard `<div>` props.
+
+### [SpanPrimitive.Indent](#spanprimitiveindent)
+
+A `<div>` that adds horizontal padding proportional to span depth.
+
+| Prop             | Type     | Default | Description                         |
+| ---------------- | -------- | ------- | ----------------------------------- |
+| `baseIndent`     | `number` | `8`     | Base padding in pixels.             |
+| `indentPerLevel` | `number` | `12`    | Additional padding per depth level. |
+
+Final `paddingLeft = baseIndent + depth * indentPerLevel`.
+
+### [SpanPrimitive.CollapseToggle](#spanprimitivecollapsetoggle)
+
+A `<button>` that toggles the current span's collapsed state. Renders only when the span has children. Stops click propagation so it can be nested inside a clickable row.
+
+Exposes `data-collapsed` for styling. Accepts all standard `<button>` props.
+
+### [SpanPrimitive.StatusIndicator](#spanprimitivestatusindicator)
+
+A `<span>` that exposes `data-span-status` for status-based styling (color, icon swap, etc.). Renders no built-in glyph; you provide the visual.
+
+`<SpanPrimitive.StatusIndicator className="size-2 rounded-full data-[span-status=running]:bg-yellow-500 data-[span-status=completed]:bg-green-500 data-[span-status=failed]:bg-red-500 data-[span-status=skipped]:bg-gray-400" />`
+
+### [SpanPrimitive.TypeBadge](#spanprimitivetypebadge)
+
+A `<span>` that defaults its children to `span.type` (override by passing custom children). Exposes `data-span-type`.
+
+### [SpanPrimitive.Name](#spanprimitivename)
+
+A `<span>` that defaults its children to `span.name`. Override by passing custom children.
+
+### [SpanPrimitive.Children](#spanprimitivechildren)
+
+Iterates over visible child spans and renders each.
+
+Two usage modes:
+
+**Render-prop:**
+
+`<SpanPrimitive.Children> {({ span }) => <CustomRow span={span} />} </SpanPrimitive.Children>`
+
+**Component prop (recommended for performance):**
+
+`<SpanPrimitive.Children components={{ Span: SpanRow }} />`
+
+The `components.Span` form is memoized; pass a stable component reference to avoid re-renders on unrelated state changes.
+
+Each child is wrapped in `SpanByIndexProvider` automatically, so primitives inside `SpanRow` read that child's state.
+
+### [SpanByIndexProvider](#spanbyindexprovider)
+
+Lower-level escape hatch. Selects one span by index and provides its scope to descendants:
+
+`<SpanByIndexProvider index={0}> <SpanPrimitive.Root>{/* reads span at index 0 */}</SpanPrimitive.Root> </SpanByIndexProvider>`
+
+Most users do not need to use this directly; `SpanPrimitive.Children` wires it up automatically.
+
+### [SpanPrimitive.ChildByIndex](#spanprimitivechildbyindex)
+
+Convenience component that pairs `SpanByIndexProvider` with a render component:
+
+`<SpanPrimitive.ChildByIndex index={0} components={{ Span: SpanRow }} />`
+
+Useful when you want explicit control over which child indices to render (e.g. for virtualization).
+
+## [Styling](#styling)
+
+All primitives forward refs and accept standard DOM props (`className`, `style`, etc.). Use the data attributes for state-based styling:
+
+`[data-span-status="running"] { /* yellow indicator */ } [data-span-status="failed"] { /* red indicator */ } [data-collapsed="true"] svg { transform: rotate(0deg); } [data-collapsed="false"] svg { transform: rotate(90deg); }`
+
+## [Related](#related)
+
+- href
+
+  /docs/utilities/heat-graph
+
+heat-graphActivity heatmap primitives in the same Radix-style headless pattern.
+
+- href
+
+  /docs/primitives
+
+Primitives overviewThe broader assistant-ui primitive system.

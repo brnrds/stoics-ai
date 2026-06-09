@@ -1,0 +1,165 @@
+# API reference
+URL: /docs/runtimes/google-adk/api
+
+createAdkStream, server helpers, session adapter, threads, message editing.
+
+Reference for the runtime's wire-up surface. Start with
+
+- href
+
+  /docs/runtimes/google-adk/quickstart
+
+quickstart
+
+if you have not already.
+
+## [createAdkStream](#createadkstream)
+
+Creates an `AdkStreamCallback` that connects to an ADK endpoint via SSE. Supports two modes.
+
+**proxy mode** — POST to your own API route:
+
+`import { createAdkStream } from "@assistant-ui/react-google-adk"; const stream = createAdkStream({ api: "/api/chat" });`
+
+**direct mode** — connect directly to an ADK server:
+
+`const stream = createAdkStream({ api: "http://localhost:8000", appName: "my-app", userId: "user-1", });`
+
+| Option    | Type                                    | Description                                          |
+| --------- | --------------------------------------- | ---------------------------------------------------- |
+| `api`     | `string`                                | URL to POST to (proxy route or ADK server base URL). |
+| `appName` | `string?`                               | ADK app name (enables direct mode when set).         |
+| `userId`  | `string?`                               | ADK user ID (required with `appName`).               |
+| `headers` | `Record<string, string>` or `() => ...` | Static or dynamic request headers.                   |
+
+## [Direct ADK server connection](#direct-adk-server-connection)
+
+When connecting directly to an ADK server (without a proxy API route), use `createAdkSessionAdapter` to back your thread list with ADK sessions:
+
+`import { useAdkRuntime, createAdkStream, createAdkSessionAdapter, } from "@assistant-ui/react-google-adk"; const ADK_URL = "http://localhost:8000"; const { adapter, load, artifacts } = createAdkSessionAdapter({ apiUrl: ADK_URL, appName: "my-app", userId: "user-1", }); const runtime = useAdkRuntime({ stream: createAdkStream({ api: ADK_URL, appName: "my-app", userId: "user-1", }), sessionAdapter: adapter, load, });`
+
+The session adapter maps ADK sessions to assistant-ui threads:
+
+- **`adapter`** is a `RemoteThreadListAdapter` that uses ADK's session REST API for thread CRUD.
+
+- **`load`** reconstructs messages from session events via `AdkEventAccumulator`.
+
+- **`artifacts`** are functions to fetch, list, and delete session artifacts (see
+
+  - href
+
+    /docs/runtimes/google-adk/hooks#artifacts
+
+  hooks → artifacts
+
+  ).
+
+| Option    | Type                                    | Description                        |
+| --------- | --------------------------------------- | ---------------------------------- |
+| `apiUrl`  | `string`                                | ADK server base URL.               |
+| `appName` | `string`                                | ADK app name.                      |
+| `userId`  | `string`                                | ADK user ID.                       |
+| `headers` | `Record<string, string>` or `() => ...` | Static or dynamic request headers. |
+
+## [Server helpers](#server-helpers)
+
+Server helpers live under the `/server` subpath:
+
+`import { createAdkApiRoute, adkEventStream, parseAdkRequest, toAdkContent, } from "@assistant-ui/react-google-adk/server";`
+
+### [createAdkApiRoute](#createadkapiroute)
+
+One-liner API route handler that combines request parsing and SSE streaming:
+
+`export const POST = createAdkApiRoute({ runner, userId: "default-user", sessionId: (req) => new URL(req.url).searchParams.get("sessionId") ?? "default", });`
+
+Both `userId` and `sessionId` accept a static string or a function `(req: Request) => string` for dynamic resolution.
+
+### [adkEventStream](#adkeventstream)
+
+Converts an `AsyncGenerator<Event>` from ADK's `Runner.runAsync()` into an SSE `Response`. Sends an initial `:ok` comment to keep connections alive through proxies.
+
+`const events = runner.runAsync({ userId, sessionId, newMessage }); return adkEventStream(events);`
+
+### [parseAdkRequest and toAdkContent](#parseadkrequest-and-toadkcontent)
+
+Lower-level helpers for custom API routes. `parseAdkRequest` parses incoming requests; `toAdkContent` converts to ADK's `Content` format. Supports user messages, tool results, `stateDelta`, `checkpointId`, and multimodal content:
+
+`const parsed = await parseAdkRequest(req); // parsed.type is "message" or "tool-result" // parsed.config contains runConfig, checkpointId // parsed.stateDelta contains session state changes const newMessage = toAdkContent(parsed); const events = runner.runAsync({ userId, sessionId, newMessage, stateDelta: parsed.stateDelta, }); return adkEventStream(events);`
+
+## [Thread management](#thread-management)
+
+Three options, picked by what you want to own. See
+
+- href
+
+  /docs/runtimes/concepts/threads
+
+threads
+
+for the general model.
+
+### [ADK session adapter](#adk-session-adapter)
+
+Use `createAdkSessionAdapter` to persist threads via ADK's session API; see
+
+- href
+
+  \#direct-adk-server-connection
+
+Direct ADK server connection
+
+above.
+
+### [Custom thread management](#custom-thread-management)
+
+`const runtime = useAdkRuntime({ stream: createAdkStream({ api: "/api/chat" }), create: async () => { const sessionId = await createSession(); return { externalId: sessionId }; }, load: async (externalId) => { const history = await loadSession(externalId); return { messages: history }; }, delete: async (externalId) => { await deleteSession(externalId); }, });`
+
+### [Cloud persistence](#cloud-persistence)
+
+For persistent thread history via assistant-cloud, pass a `cloud` instance:
+
+`const runtime = useAdkRuntime({ cloud, // see "AssistantCloud" in /docs/runtimes/concepts/threads stream: createAdkStream({ api: "/api/chat" }), });`
+
+## [Message editing and regeneration](#message-editing-and-regeneration)
+
+Provide a `getCheckpointId` callback to enable edit and regenerate buttons:
+
+`const runtime = useAdkRuntime({ stream: createAdkStream({ api: "/api/chat" }), getCheckpointId: async (threadId, parentMessages) => { // Resolve checkpoint ID for server-side forking return checkpointId; }, });`
+
+When `getCheckpointId` is provided:
+
+- **Edit buttons** appear on user messages.
+- **Regenerate buttons** appear on assistant messages.
+
+The resolved `checkpointId` is passed to your `stream` callback via `config.checkpointId`.
+
+Without `getCheckpointId`, edit and regenerate buttons will not appear. This is intentional; truncating client-side messages without forking from the correct server-side checkpoint would produce incorrect state.
+
+## [Event handlers](#event-handlers)
+
+Listen to streaming events:
+
+`const runtime = useAdkRuntime({ stream: createAdkStream({ api: "/api/chat" }), eventHandlers: { onError: (error) => { console.error("Stream error:", error); }, onAgentTransfer: (toAgent) => { console.log("Agent transferred to:", toAgent); }, onCustomEvent: (key, value) => { // Fired for each entry in event.customMetadata console.log("Custom metadata:", key, value); }, }, });`
+
+## [RunConfig and stateDelta](#runconfig-and-statedelta)
+
+Pass `AdkRunConfig` to control agent behavior, and `stateDelta` to mutate session state along with messages:
+
+`import { useAdkSend } from "@assistant-ui/react-google-adk"; const send = useAdkSend(); send(messages, { runConfig: { streamingMode: "sse", maxLlmCalls: 10, pauseOnToolCalls: true, }, stateDelta: { taskId: "abc", mode: "verbose" }, });`
+
+`stateDelta` maps to ADK's `stateDelta` parameter on `/run_sse`.
+
+## [Next](#next)
+
+- href
+
+  /docs/runtimes/google-adk/hooks
+
+HooksTool confirmations, auth, input requests, artifacts, escalation, metadata.
+
+- href
+
+  /docs/runtimes/concepts/threads
+
+ThreadsGeneral model for multi-thread support across runtimes.

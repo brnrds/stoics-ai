@@ -8,7 +8,9 @@ Do not refactor adjacent code because you find it unaesthetic.
 Do not introduce a helper, a wrapper, an interface, or a base class without being told to. If an approved doc explicitly names a helper, resolver, or DAL module, that counts as being told.
 Explain what you are about to do and why.
 
-No legacy compatibility. Do not create `scripts/` or add ad hoc repo scripts. 
+No legacy compatibility. Do not create `scripts/` or add ad hoc repo scripts.
+
+Use standard project commands (`pnpm add`, `pnpm lint`, etc.). If a command fails, stop and ask — do not invent workarounds (custom `TMPDIR`, alternate package managers, etc.) without user approval.
 
 Docs live in `docs/`. Do not write docs or create folders in `docs/` without user approval. Keep `AGENTS.md` short. Put task-specific agent rules in `.cursor/rules/`.
 

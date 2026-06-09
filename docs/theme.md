@@ -7,7 +7,8 @@
 - Anti-flash script: `app/components/theme-script.tsx` (injected in `<head>` from `app/layout.tsx`)
 - Provider: `app/components/theme-provider.tsx` (`useTheme`, `cycle`)
 - Toggle: `app/components/theme-toggle.tsx`
-- App shell header: `app/components/app-header.tsx`
+- App shell header: `app/components/app-header.tsx` (uses `app/components/shell-header.tsx`)
+- Shared top bar primitive: `app/components/shell-header.tsx` (`ShellHeader`, `shellNavLinkClassName`)
 - Modal: `app/components/ui/Modal.tsx`
 - Utility: `lib/utils.ts` (`cn()`)
 - Reduced motion hook: `lib/hooks/useReducedMotion.ts`
@@ -143,7 +144,7 @@ Modal surfaces use theme tokens: `bg-surface`, `border-border`, `text-foreground
 |---|---|
 | `app/(app)/layout.tsx` | Logged-in app shell: `AppHeader` + scrollable/flex child area. Used by `/`, `/drive`, and `/sheets/*`. |
 | `app/components/app-header.tsx` | Standard top bar: product label, account name, email, settings link, sign out, theme toggle. |
-| `app/settings/layout.tsx` | Settings-only shell: left sidebar nav + content column. Intentionally different from the main app shell. |
+| `app/settings/layout.tsx` | Settings-only shell: left sidebar nav + content column. Uses the same `ShellHeader` top bar as the main app; settings stays visually distinct via the sidebar, not a separate misaligned top strip. |
 | `app/components/sheets/SheetTabs.tsx` | Spreadsheet tab strip with horizontal scroll. |
 | `app/components/sheets/DataTable.tsx` | TanStack table: search, column visibility, sort, pagination, inline cell edit. |
 | `app/components/ui/Modal.tsx` | Animated modal with backdrop blur. |

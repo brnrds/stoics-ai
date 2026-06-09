@@ -125,5 +125,5 @@ Before merging work that touches credentials:
 ## Current status
 
 - **Decided:** tenant API keys use WorkOS Vault (this doc).
-- **Not yet implemented:** `vault_secrets` table, `lib/vault.ts`, Vault API routes, key registry, capability readers.
-- **Do not** implement the quickstart pattern of putting provider keys in `.env.local` for production tenant use. See `docs/examples/nextjs-app-router-chat.md` for chat wiring that assumes Vault.
+- **Implemented:** `vault_secrets` table, `lib/vault.ts`, `lib/vault-account.ts`, `db/vault-secrets.ts`, `lib/vault-requirements.ts`, `app/api/vault/secrets/route.ts`, `lib/capabilities/ai/access.ts`, settings keys UI.
+- **Do not** implement the quickstart pattern of putting provider keys in `.env.local` for production tenant use. See `docs/ui-ux/examples/nextjs-app-router-chat.md` for raw AI SDK chat wiring and `docs/ui-ux/examples/assistant-ui.md` for assistant-ui Thread UI.

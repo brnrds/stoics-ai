@@ -19,15 +19,17 @@ The official guide uses platform env or **Vercel AI Gateway**. **This project do
 
 Before wiring chat:
 
-1. Implement Vault (copy pattern from `ak-marketing-toolkit`: `lib/vault.ts`, `lib/vault-account.ts`, `vault_secrets` table).
-2. Add a server helper to read the key at call time, e.g. `getAnthropicApiKey(context)` → Vault lookup → `createAnthropic({ apiKey })`.
+1. Port the Vault stack from `ak-marketing-toolkit` (`lib/vault.ts`, `db/vault-secrets.ts`, `lib/vault-account.ts`, `lib/onboarding-requirements.ts`).
+2. Add `lib/capabilities/ai/access.ts` using the accessor shape from `ak-marketing-toolkit/lib/capabilities/lusha/access.ts` (metadata → `readVaultSecret` → trimmed key).
 3. Do **not** add provider keys to `schemas/env.ts` or `.env.local` for tenant use.
+
+There is **no** `app/api/chat/route.ts` in `ak-marketing-toolkit`. For auth gating in API routes, copy `ak-marketing-toolkit/app/api/vault/secrets/route.ts` (`resolveCurrentAccountContext` → 401 / 428).
 
 Platform env stays WorkOS + database only (`WORKOS_*`, `DATABASE_URL`).
 
 ## 2. Chat API route
 
-Create `app/api/chat/route.ts`. Load the provider key from Vault at call time — see `docs/vault.md`. Helpers like `getAnthropicApiKey` and `resolveCurrentAccountContext` are not implemented yet; copy from `ak-marketing-toolkit` capability access patterns.
+Create `app/api/chat/route.ts`. Compose from `ak-marketing-toolkit/app/api/vault/secrets/route.ts` (auth gate) plus the AI accessor above. Load the provider key from Vault at call time — see `docs/vault.md`.
 
 ```tsx
 import {
@@ -193,6 +195,7 @@ pnpm lint
 
 ## Next after the quickstart
 
+- [assistant-ui chat UI](assistant-ui.md) — Thread components on top of the same `/api/chat` route
 - [RAG chatbot cookbook](https://ai-sdk.dev/cookbook/guides/rag-chatbot)
 - [Multi-modal chatbot](https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot)
 - Project harness tutorial under `docs/examples/ai-sdk-harness/`

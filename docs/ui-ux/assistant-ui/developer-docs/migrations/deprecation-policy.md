@@ -1,0 +1,40 @@
+# Deprecation Policy
+URL: /docs/migrations/deprecation-policy
+
+Stability guarantees and deprecation timelines for assistant-ui features.
+
+assistant-ui is committed to providing a stable API, so you can spend your time building amazing things on top of it.
+
+Rarely, we need to deprecate a feature we've already shipped, because it is causing performance, usability, or security issues. In such cases, we will communicate the intent to unship as soon as possible by marking the feature as `@deprecated` and publishing a notice in the documentation.
+
+Deprecations and breaking changes primarily affect new features released. The longer an API has been in the library, the less likely it is to be deprecated. For features that have long existed in the library, we will provide a longer deprecation notice period (as described below).
+
+Below is a list of features considered stable and those considered experimental.
+
+## [Experimental Features](#experimental-features)
+
+These features may be removed at any time without notice.
+
+- Anything marked as `unstable_`, `experimental_`, or `internal`
+- The `RuntimeCore` API (considered internal)
+
+## [Beta Features](#beta-features)
+
+A deprecation of these features will undergo a short (<1) month deprecation notice period.
+
+- TailwindCSS Plugins (e.g. `tw-shimmer`, `tw-glass`)
+- Context API
+- Runtime API
+- Message types
+- Styled UI components
+- Primitive Hooks (e.g. useBranchPickerNext)
+- Attachment APIs
+- shadcn/ui styles
+
+## [Stable Features](#stable-features)
+
+A deprecation of these features will undergo a long (>3 month) deprecation notice period.
+
+The following features are considered stable:
+
+- Primitives (except for `AttachmentPrimitive`)

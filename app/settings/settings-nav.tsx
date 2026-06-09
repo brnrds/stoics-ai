@@ -23,7 +23,7 @@ export function SettingsNav() {
             className={
               active
                 ? "border-l-2 border-accent bg-surface-muted px-3 py-2 text-sm font-medium text-foreground"
-                : "border-l-2 border-transparent px-3 py-2 text-sm text-muted transition hover:text-foreground"
+                : "border-l-2 border-transparent px-3 py-2 text-sm text-muted-foreground transition hover:text-foreground"
             }
           >
             {item.label}

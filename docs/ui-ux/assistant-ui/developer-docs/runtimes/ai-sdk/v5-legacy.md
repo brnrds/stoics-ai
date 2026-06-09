@@ -1,0 +1,98 @@
+# AI SDK v5 (legacy)
+URL: /docs/runtimes/ai-sdk/v5-legacy
+
+Reference for projects still on AI SDK v5. New projects should use v6.
+
+AI SDK v5 is a legacy version. New projects should use
+
+- href
+
+  /docs/runtimes/ai-sdk/v6
+
+AI SDK v6
+
+. v5 users stay on `@assistant-ui/react-ai-sdk@0.x`; the latest line targets v6+.
+
+## [Why legacy](#why-legacy)
+
+AI SDK v6 introduced major API changes: async `convertToModelMessages`, a new tool schema, and `toUIMessageStreamResponse()`. v5 still works but no longer receives new features in `@assistant-ui/react-ai-sdk`. Pinning to `@0.x` keeps you on the v5-compatible surface.
+
+This page is reference for existing v5 projects. Plan to migrate to v6 when feasible.
+
+## [Setup](#setup)
+
+### [Install v5-compatible versions](#install-v5-compatible-versions)
+
+- packages
+
+  - @assistant-ui/react
+  - @assistant-ui/react-ai-sdk\@0.x
+  - ai@^5
+  - @ai-sdk/openai@^1
+  - zod
+
+### [Backend route](#backend-route)
+
+- title
+
+  @/app/api/chat/route.ts
+
+``import { openai } from "@ai-sdk/openai"; import { streamText, tool } from "ai"; import type { Message } from "ai"; import { z } from "zod"; export const maxDuration = 30; export async function POST(req: Request) { const { messages }: { messages: Message[] } = await req.json(); const result = streamText({ model: openai("gpt-5.4-nano"), messages, tools: { get_current_weather: tool({ description: "Get the current weather", parameters: z.object({ city: z.string() }), execute: async ({ city }) => `The weather in ${city} is sunny`, }), }, }); return result.toDataStreamResponse(); }``
+
+### [Frontend](#frontend)
+
+- title
+
+  @/app/page.tsx
+
+`"use client"; import { Thread } from "@/components/assistant-ui/thread"; import { AssistantRuntimeProvider } from "@assistant-ui/react"; import { useChatRuntime } from "@assistant-ui/react-ai-sdk"; export default function Home() { const runtime = useChatRuntime(); return ( <AssistantRuntimeProvider runtime={runtime}> <div className="h-full"> <Thread /> </div> </AssistantRuntimeProvider> ); }`
+
+On `@assistant-ui/react-ai-sdk` versions older than 0.11.3, use `useVercelUseChatRuntime` with `useChat` from `ai/react` instead:
+
+`import { useChat } from "ai/react"; import { useVercelUseChatRuntime } from "@assistant-ui/react-ai-sdk"; const chat = useChat({ api: "/api/chat" }); const runtime = useVercelUseChatRuntime(chat);`
+
+## [Differences from v6](#differences-from-v6)
+
+| Feature                      | v5                            | v6                                        |
+| ---------------------------- | ----------------------------- | ----------------------------------------- |
+| `ai` package                 | `ai@^5`                       | `ai@^6`                                   |
+| `@assistant-ui/react-ai-sdk` | `@0.x`                        | `@latest`                                 |
+| `@ai-sdk/openai`             | `^1`                          | `^3`                                      |
+| Message type                 | `Message`                     | `UIMessage`                               |
+| `convertToModelMessages`     | Sync                          | Async (`await`)                           |
+| Tool schema                  | `parameters: z.object({...})` | `inputSchema: zodSchema(z.object({...}))` |
+| Response                     | `toDataStreamResponse()`      | `toUIMessageStreamResponse()`             |
+
+## [Migration to v6](#migration-to-v6)
+
+When you are ready to upgrade:
+
+1. Update `ai` from `@^5` to `@^6`, and `@assistant-ui/react-ai-sdk` to the latest line.
+2. Add `await` to `convertToModelMessages(...)` calls.
+3. Convert tool schemas: `parameters: z.object({...})` → `inputSchema: zodSchema(z.object({...}))`.
+4. Replace `toDataStreamResponse()` with `toUIMessageStreamResponse()`.
+5. Switch the `Message` type to `UIMessage`.
+
+AI SDK provides codemods at
+
+- href
+
+  https\://ai-sdk.dev/docs/migration-guides/migration-guide-6-0
+
+ai-sdk.dev/docs/migration-guides/migration-guide-6-0
+
+that handle most of the package-side rewrites.
+
+## [Related](#related)
+
+- href
+
+  /docs/runtimes/ai-sdk/v6
+
+AI SDK v6Current integration; what new projects should target.
+
+- href
+
+  /docs/runtimes/ai-sdk/v4-legacy
+
+AI SDK v4 (legacy)The earlier legacy version using react-data-stream.

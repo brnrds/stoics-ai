@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { resolveCurrentAccount } from "@/lib/account-context";
 
 export const dynamic = "force-dynamic";
@@ -5,7 +7,7 @@ export const dynamic = "force-dynamic";
 function Field({ label, value }: { label: string; value: string }) {
   return (
     <div className="min-w-0 border-t border-border py-3">
-      <dt className="text-xs font-medium uppercase text-muted">{label}</dt>
+      <dt className="text-xs font-medium uppercase text-muted-foreground">{label}</dt>
       <dd className="mt-1 truncate font-mono text-sm text-foreground">{value}</dd>
     </div>
   );
@@ -26,13 +28,21 @@ export default async function Home() {
           <div className="flex items-center justify-between gap-4">
             <div>
               <h2 className="text-lg font-semibold">Workspace</h2>
-              <p className="mt-1 text-sm text-muted">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Tenant context is active for this session.
               </p>
             </div>
             <span className="border border-border bg-surface-muted px-3 py-1 text-xs font-medium uppercase text-foreground">
               {account.status}
             </span>
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/chat"
+              className="inline-flex h-10 items-center bg-accent px-4 text-sm font-medium text-accent-foreground transition hover:bg-accent-hover"
+            >
+              Open chat
+            </Link>
           </div>
         </div>
 

@@ -8,6 +8,7 @@ import {
   primaryKey,
   text,
   timestamp,
+  uniqueIndex,
   uuid,
 } from "drizzle-orm/pg-core";
 
@@ -104,6 +105,50 @@ export const accountMemberships = pgTable(
     index("account_memberships_user_id_idx").on(table.userId),
     index("account_memberships_status_idx").on(table.status),
     pgPolicy("account_memberships_account_isolation", {
+      for: "all",
+      using: sql`${table.accountId}::text = current_setting('app.account_id', true)`,
+      withCheck: sql`${table.accountId}::text = current_setting('app.account_id', true)`,
+    }),
+  ],
+).enableRLS();
+
+export const vaultSecrets = pgTable(
+  "vault_secrets",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    accountId: uuid("account_id")
+      .notNull()
+      .references(() => accounts.id, { onDelete: "cascade" }),
+    workosOrgId: text("workos_org_id").notNull(),
+    vaultObjectId: text("vault_object_id").notNull().unique(),
+    vaultObjectName: text("vault_object_name").notNull().unique(),
+    kind: text("kind").notNull(),
+    provider: text("provider").notNull(),
+    createdByUserId: uuid("created_by_user_id").references(() => users.id, {
+      onDelete: "set null",
+    }),
+    ...timestamps,
+  },
+  (table) => [
+    check(
+      "vault_secrets_workos_org_id_format",
+      sql`${table.workosOrgId} like 'org_%'`,
+    ),
+    check(
+      "vault_secrets_object_id_format",
+      sql`${table.vaultObjectId} like 'secret_%'`,
+    ),
+    check(
+      "vault_secrets_kind_check",
+      sql`${table.kind} in ('api_key')`,
+    ),
+    index("vault_secrets_account_id_idx").on(table.accountId),
+    uniqueIndex("vault_secrets_account_kind_provider_key").on(
+      table.accountId,
+      table.kind,
+      table.provider,
+    ),
+    pgPolicy("vault_secrets_account_isolation", {
       for: "all",
       using: sql`${table.accountId}::text = current_setting('app.account_id', true)`,
       withCheck: sql`${table.accountId}::text = current_setting('app.account_id', true)`,

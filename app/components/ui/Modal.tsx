@@ -245,7 +245,7 @@ export function Modal({
                     type="button"
                     onClick={onClose}
                     aria-label="Close"
-                    className="p-1 text-muted transition-colors hover:bg-surface-muted hover:text-foreground"
+                    className="p-1 text-muted-foreground transition-colors hover:bg-surface-muted hover:text-foreground"
                   >
                     <XIcon className="h-4 w-4" />
                   </button>
@@ -258,7 +258,7 @@ export function Modal({
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="absolute right-3 top-3 p-1 text-muted transition-colors hover:bg-surface-muted hover:text-foreground"
+                className="absolute right-3 top-3 p-1 text-muted-foreground transition-colors hover:bg-surface-muted hover:text-foreground"
               >
                 <XIcon className="h-4 w-4" />
               </button>
